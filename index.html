@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flup3 Privacy Policy</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #content {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Flup3 Privacy Policy</h1>
+  <div id="content">Loading...</div>
+</div>
+
+<script>
+fetch('./privacy-policy.md')
+  .then(response => response.text())
+  .then(text => {
+    document.getElementById('content').innerHTML =
+      marked.parse(text);
+  });
+</script>
+
+</body>
+</html>
